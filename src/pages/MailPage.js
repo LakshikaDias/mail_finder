@@ -15,7 +15,7 @@ const MailPage = () => {
   const mailData = useSelector((state) => state.mail.value);
 
   const mailContent = mailData.find((data) => {
-    return data.id === id;
+    return data.id == id;
   });
 
   return (

@@ -8,6 +8,7 @@ import SpamPage from "./pages/SpamPage";
 
 import { Container, Navbar, Nav } from "react-bootstrap";
 import logo from "./Images/logo.png";
+import EmailForm from "./components/EmailForm";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/mail/sent" element={<SentPage />}></Route>
         <Route path="/mail/draft" element={<DraftPage />}></Route>
         <Route path="/mail/spam" element={<SpamPage />}></Route>
+        <Route path="/newMail" element={<EmailForm />}></Route>
       </Routes>
     </div>
   );

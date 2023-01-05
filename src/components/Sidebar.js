@@ -8,14 +8,21 @@ const Sidebar = () => {
     <div>
       <Container>
         <Row>
-          <Button variant="outline-primary">Compose</Button>
+          <Button
+            variant="outline-primary"
+            onClick={() => {
+              navigate("/newMail");
+            }}
+          >
+            Compose
+          </Button>
         </Row>
         <Row>
           <Button
+            variant="outline-primary"
             onClick={() => {
               navigate("/mail/inbox");
             }}
-            variant="outline-primary"
           >
             Inbox
           </Button>
