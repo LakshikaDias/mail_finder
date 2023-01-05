@@ -1,16 +1,21 @@
 import React from "react";
+
 import { Container, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "../components/Sidebar";
 import { useSelector } from "react-redux";
 
-function Home() {
+const DraftPage = () => {
   let navigate = useNavigate();
 
   const mailData = useSelector((state) => state.mail.value);
+
+  const draftMailData = mailData.filter((data) => {
+    return data.mailStatus == "draft";
+  });
 
   return (
     <>
@@ -22,7 +27,7 @@ function Home() {
           </Col>
 
           <Col xs={8}>
-            {mailData.map((data) => {
+            {draftMailData.map((data) => {
               return (
                 <div className="d-grid gap-2">
                   <Button
@@ -41,6 +46,6 @@ function Home() {
       </Container>
     </>
   );
-}
+};
 
-export default Home;
+export default DraftPage;
